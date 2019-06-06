@@ -1,4 +1,8 @@
 const axios = require("axios");
 const fs = require("fs");
 
-let baseURL = `https://wger.de/api/v2/exercise/`;
+let exerciseURL = `https://wger.de/api/v2/exercise/`;
+
+fetch(exerciseURL)
+  .then(resp => resp.json())
+  .then(function() {});
