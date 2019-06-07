@@ -3,7 +3,7 @@ const mongoose = require("../connection");
 const muscleSchema = new mongoose.Schema({
   name: String,
   is_front: Boolean
-  // show exercises that use this muscle
+  // related_exercises:
 });
 
 const Muscle = mongoose.model("Muscle", muscleSchema);

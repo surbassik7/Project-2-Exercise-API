@@ -8,7 +8,7 @@ fetch(equipmentURL)
   .then(res => res.json())
   .then(equipment => {
     let stringified = JSON.stringify(equipment, null, 2);
-    fs.writeFile("./equipment.json", stringified, "utf8", err => {
+    fs.writeFile("./db/equipment.json", stringified, "utf8", err => {
       if (err) {
         console.log(err);
       } else console.log(`wrote ${equipment.length} items to equipment.json`);
