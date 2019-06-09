@@ -23,14 +23,14 @@ router.post("/", (req, res) => {
   Exercise.create(req.body).then(newExercise => res.json(newExercise));
 });
 
-router.post("/:name", (req, res) => {
-  Person.findOneandUpdate({ name: req.params.name }, req.body, {
+router.patch("/:name", (req, res) => {
+  Exercise.findOneandUpdate({ name: req.params.name }, req.body, {
     new: true
   }).then(updateExercise => res.json(updateExercise));
 });
 
 router.delete("/:name", (req, res) => {
-  Person.findOneAndDelete({ name: req.params.name }).then(deleteExercise => {
+  Exercise.findOneAndDelete({ name: req.params.name }).then(deleteExercise => {
     res.json(deleteExercise);
   });
 });
