@@ -1,6 +1,6 @@
 const mongoose = require("../connection");
-
-const equipmentSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const equipmentSchema = new Schema({
   name: String
   //show exercises that use this equipment
 });

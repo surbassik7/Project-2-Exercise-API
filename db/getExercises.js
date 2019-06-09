@@ -7,15 +7,15 @@ const fetch = require("node-fetch");
 /** step 1: use fetch to get the exercise data from the wger API, and concatenate the results to `exercieses` until we run out of new pages */
 
 /** step 2: once we hit the end and run out of pages, we will THEN us the `fs` module to write the `exercises` array to a json file */
-
+let Exercises = [];
 for (i = 0; i <= 29; i++) {
   let exerciseURL = `https://wger.de/api/v2/exercise/?page=${i}`;
-  let Exercises = [];
+
   fetch(exerciseURL)
     .then(res => res.json())
-    .then(page => Exercises.push(page))
+    .then(page => Exercises.push(page.results))
     .then(() => {
-      console.log(rExercises);
+      console.log(Exercises);
 
       fs.writeFile(
         "./db/exercise.json",

@@ -7,7 +7,7 @@ mongoose
   .then(conn => {
     console.log(`connected to mongodb on ${conn.connections[0].name} db`);
   })
-  .catcher(err => {
+  .catch(err => {
     console.error(err);
   });
 

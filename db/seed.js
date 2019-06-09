@@ -4,7 +4,7 @@ const equipment = require("../db/equipment.json");
 const muscleModel = require("../db/models/Muscles");
 const muscles = require("../db/muscles.json");
 const exerciseModel = require("../db/models/Exercises");
-const exercises = require("../db/exercises.json");
+const exercises = require("../db/exerciseSingleArray.json");
 
 equipmentModel.remove({});
 equipmentModel.collection

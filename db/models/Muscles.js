@@ -1,6 +1,6 @@
 const mongoose = require("../connection");
-
-const muscleSchema = new mongoose.Schema({
+const Schema = mongoose.Schema;
+const muscleSchema = new Schema({
   name: String,
   is_front: Boolean
   // related_exercises:
