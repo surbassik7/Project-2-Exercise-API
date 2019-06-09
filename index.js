@@ -19,8 +19,8 @@ app.use("/api/muscle", muscleCon);
 
 app.set("port", process.env.PORT || 4000);
 
-app.listen(app.get("port"), () =>
-  console.log(`✅ PORT: ${app.get("port")} 🌟`)
-);
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
 
 module.exports = router;
