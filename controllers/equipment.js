@@ -11,4 +11,11 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:name", (req, res) => {
+  console.log(req.params.name);
+  Equipment.findOne({ name: req.params.name }).then(equipment =>
+    res.json(equipment)
+  );
+});
+
 module.exports = router;

@@ -13,9 +13,26 @@ router.get("/", (req, res) => {
 
 router.get("/:name", (req, res) => {
   console.log(req.params.name);
-  Exercise.findOne({ name: req.params.name }).then(exercise =>
-    res.json(exercise)
+  Exercise.findOne({ name: req.params.name }).then(oneExercise =>
+    res.json(oneExercise)
   );
+});
+
+router.post("/", (req, res) => {
+  const newExercise = req.body;
+  Exercise.create(req.body).then(newExercise => res.json(newExercise));
+});
+
+router.post("/:name", (req, res) => {
+  Person.findOneandUpdate({ name: req.params.name }, req.body, {
+    new: true
+  }).then(updateExercise => res.json(updateExercise));
+});
+
+router.delete("/:name", (req, res) => {
+  Person.findOneAndDelete({ name: req.params.name }).then(deleteExercise => {
+    res.json(deleteExercise);
+  });
 });
 
 module.exports = router;

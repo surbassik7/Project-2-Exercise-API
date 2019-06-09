@@ -11,4 +11,9 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/:name", (req, res) => {
+  console.log(req.params.name);
+  Muscles.findOne({ name: req.params.name }).then(muscles => res.json(muscles));
+});
+
 module.exports = router;
