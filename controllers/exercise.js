@@ -18,7 +18,7 @@ router.get("/:name", (req, res) => {
   );
 });
 
-router.post("/", (req, res) => {
+router.post("/:name", (req, res) => {
   const newExercise = req.body;
   Exercise.create(req.body).then(newExercise => res.json(newExercise));
 });
