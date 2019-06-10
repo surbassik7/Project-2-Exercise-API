@@ -23,14 +23,14 @@ router.post("/:name", (req, res) => {
   Exercise.create(req.body).then(newExercise => res.json(newExercise));
 });
 
-router.patch("/:name", (req, res) => {
-  Exercise.findOneandUpdate({ name: req.params.name }, req.body, {
+router.patch("/:id", (req, res) => {
+  Exercise.findByIdAndUpdate({ _id: req.params.id }, req.body, {
     new: true
   }).then(updateExercise => res.json(updateExercise));
 });
 
-router.delete("/:name", (req, res) => {
-  Exercise.findOneAndDelete({ name: req.params.name }).then(deleteExercise => {
+router.delete("/:id", (req, res) => {
+  Exercise.findByIdAndDelete({ _id: req.params.id }).then(deleteExercise => {
     res.json(deleteExercise);
   });
 });
